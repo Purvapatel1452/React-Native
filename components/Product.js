@@ -24,6 +24,7 @@ const Product=(props)=>{
     const cartItems=useSelector((state)=>state.reducer)
 
     const [isAdd,setIsAdd]=useState(false)
+    console.warn('item',item.name)
 
     useEffect(()=>{
 
@@ -31,6 +32,7 @@ const Product=(props)=>{
         return element.name==item.name
           
         })
+        
 
 
         if(result.length){
@@ -46,8 +48,8 @@ const Product=(props)=>{
     
 
   return (
-    <View style={{borderBottomWidth:2, borderColor:'silver',paddingBottom:20,flex:1,alignItems:'center',marginBottom:50}}>
-          <Text style={{fontSize:30,marginTop:50}}>{item.name}</Text>
+    <View style={{borderBottomWidth:2, borderColor:'silver',paddingBottom:20,flex:1,alignItems:'center',marginBottom:80,paddingTop:1}}>
+          <Text style={{fontSize:30,marginTop:10}}>{item.name}</Text>
           <Text style={{fontSize:20}}>{item.color}</Text>
           <Text style={{fontSize:20}}>{item.price}</Text>
           <Image style={{width:200,height:250,marginBottom:10}} source={{uri:item.image}} /> 
